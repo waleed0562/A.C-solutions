@@ -888,11 +888,19 @@ section {
     .footer-bottom {
         flex-direction: column;
         justify-content: center;
+        align-items: center;
+        gap: 0.75rem;
     }
     
     .footer-links {
-        flex-direction: column;
-        gap: 1rem;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.75rem;
+    }
+
+    .footer-links a {
+        white-space: nowrap;
     }
     
     h1 {
