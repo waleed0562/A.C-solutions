@@ -20,18 +20,18 @@ document.addEventListener('DOMContentLoaded', function() {
 function initMobileMenu() {
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
-    
+
     if (!menuToggle) return;
-    
+
     menuToggle.addEventListener('click', function() {
-        navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        navLinks.classList.toggle('active');
         menuToggle.classList.toggle('active');
     });
-    
+
     // Close menu when a link is clicked
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', function() {
-            navLinks.style.display = 'none';
+            navLinks.classList.remove('active');
             menuToggle.classList.remove('active');
         });
     });
@@ -47,13 +47,13 @@ function initFormHandling() {
     if (contactForm) {
         contactForm.addEventListener('submit', handleFormSubmit);
     }
-    
+
     // Application form
     const appForms = document.querySelectorAll('.application-form');
     appForms.forEach(form => {
         form.addEventListener('submit', handleFormSubmit);
     });
-    
+
     // Newsletter form
     const newsletterForm = document.querySelector('.newsletter-form');
     if (newsletterForm) {
@@ -151,7 +151,7 @@ function showNotification(message, type = 'info') {
             <button class="notification-close">&times;</button>
         </div>
     `;
-    
+
     // Add styles dynamically if not in CSS
     if (!document.querySelector('style[data-notification]')) {
         const style = document.createElement('style');
@@ -170,22 +170,22 @@ function showNotification(message, type = 'info') {
                 z-index: 1000;
                 animation: slideUp 0.3s ease-out;
             }
-            
+
             .notification-success {
                 background: linear-gradient(135deg, #10b981, #22D3EE);
             }
-            
+
             .notification-error {
                 background: linear-gradient(135deg, #ef4444, #f87171);
             }
-            
+
             .notification-content {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
                 gap: 1rem;
             }
-            
+
             .notification-close {
                 background: none;
                 border: none;
@@ -196,7 +196,7 @@ function showNotification(message, type = 'info') {
                 width: 30px;
                 height: 30px;
             }
-            
+
             @keyframes slideUp {
                 from {
                     transform: translateY(100px);
@@ -210,14 +210,14 @@ function showNotification(message, type = 'info') {
         `;
         document.head.appendChild(style);
     }
-    
+
     document.body.appendChild(notification);
-    
+
     // Close button
     notification.querySelector('.notification-close').addEventListener('click', () => {
         notification.remove();
     });
-    
+
     // Auto remove after 5 seconds
     setTimeout(() => {
         notification.remove();
@@ -229,19 +229,22 @@ function showNotification(message, type = 'info') {
 // ============================================
 
 function initPortfolioFilters() {
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const portfolioCards = document.querySelectorAll('.portfolio-card');
-    
+    const portfolioSection = document.querySelector('.portfolio-section');
+    if (!portfolioSection) return;
+
+    const filterButtons = portfolioSection.querySelectorAll('.filter-btn');
+    const portfolioCards = portfolioSection.querySelectorAll('.portfolio-card');
+
     if (filterButtons.length === 0) return;
-    
+
     filterButtons.forEach(button => {
         button.addEventListener('click', function() {
             const filterValue = this.getAttribute('data-filter');
-            
+
             // Update active button
             filterButtons.forEach(btn => btn.classList.remove('active'));
             this.classList.add('active');
-            
+
             // Filter cards
             portfolioCards.forEach(card => {
                 const category = card.getAttribute('data-category');
@@ -261,24 +264,27 @@ function initPortfolioFilters() {
 // ============================================
 
 function initBlogFilters() {
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const blogCards = document.querySelectorAll('.blog-card');
-    
+    const blogSection = document.querySelector('.blog-section');
+    if (!blogSection) return;
+
+    const filterButtons = blogSection.querySelectorAll('.filter-btn');
+    const blogCards = blogSection.querySelectorAll('.blog-card');
+
     if (filterButtons.length === 0 || blogCards.length === 0) return;
-    
+
     filterButtons.forEach(button => {
         button.addEventListener('click', function() {
             const filterValue = this.getAttribute('data-filter');
-            
+
             // Update active button
             filterButtons.forEach(btn => btn.classList.remove('active'));
             this.classList.add('active');
-            
+
             // Filter cards
             blogCards.forEach(card => {
                 const category = card.getAttribute('data-category');
                 if (filterValue === 'all' || category === filterValue) {
-                    card.style.display = 'block';
+                    card.style.display = 'flex';
                     card.style.animation = 'fadeIn 0.3s ease-in';
                 } else {
                     card.style.display = 'none';
@@ -297,7 +303,7 @@ function initSmoothScroll() {
         anchor.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
             if (href === '#') return;
-            
+
             const target = document.querySelector(href);
             if (target) {
                 e.preventDefault();
@@ -319,7 +325,7 @@ function initScrollAnimations() {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
     };
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -328,7 +334,7 @@ function initScrollAnimations() {
             }
         });
     }, observerOptions);
-    
+
     document.querySelectorAll('section, .card, .service-card').forEach(el => {
         observer.observe(el);
     });
@@ -341,15 +347,15 @@ function initScrollAnimations() {
 function initCarouselNav() {
     const carousel = document.querySelector('.carousel-container');
     if (!carousel) return;
-    
+
     const nextBtn = document.querySelector('.carousel-next');
     const prevBtn = document.querySelector('.carousel-prev');
-    
+
     if (nextBtn && prevBtn) {
         nextBtn.addEventListener('click', () => {
             carousel.scrollLeft += 300;
         });
-        
+
         prevBtn.addEventListener('click', () => {
             carousel.scrollLeft -= 300;
         });
@@ -365,7 +371,7 @@ function animateNumber(element, target, duration = 2000) {
     const start = 0;
     const increment = target / (duration / 16);
     let current = start;
-    
+
     const timer = setInterval(() => {
         current += increment;
         if (current >= target) {
@@ -433,7 +439,7 @@ if ('IntersectionObserver' in window) {
             }
         });
     });
-    
+
     document.querySelectorAll('img[data-src]').forEach(img => {
         imageObserver.observe(img);
     });
@@ -447,9 +453,9 @@ if ('IntersectionObserver' in window) {
 function trackPageView() {
     const pageTitle = document.title;
     const pageURL = window.location.href;
-    
+
     console.log(`Page View: ${pageTitle} - ${pageURL}`);
-    
+
     // Store in localStorage for analytics
     const analytics = JSON.parse(localStorage.getItem('analytics') || '[]');
     analytics.push({

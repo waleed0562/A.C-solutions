@@ -855,6 +855,10 @@ section {
         padding: 0.5rem 0;
     }
 
+    .nav-links.active {
+        display: flex;
+    }
+
     .nav-links li {
         width: 100%;
         text-align: center;
