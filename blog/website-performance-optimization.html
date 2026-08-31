@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Practical techniques to improve website performance, load times, and user experience for better SEO rankings and conversions.">
+    <meta name="keywords" content="website performance, page speed, Core Web Vitals, SEO, web optimization, faster website">
+    <meta property="og:title" content="Performance Optimization: Making Your Website Faster - A.C. SOLUTIONS">
+    <meta property="og:description" content="Practical techniques to improve website speed, user experience, and SEO">
+    <title>Performance Optimization: Making Your Website Faster - A.C. SOLUTIONS Blog</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/extended.css">
+    <style>
+        .blog-post { padding: 60px 0 80px; }
+        .blog-post-header { max-width: 800px; margin: 0 auto 40px; }
+        .blog-post-meta { display: flex; gap: 20px; margin-bottom: 20px; font-size: 0.95rem; color: #94a3b8; }
+        .blog-post-meta .category { color: #3b82f6; font-weight: 600; }
+        .blog-post-header h1 { font-size: 2.4rem; line-height: 1.3; margin-bottom: 20px; color: #f1f5f9; }
+        .blog-post-content { max-width: 800px; margin: 0 auto; color: #cbd5e1; line-height: 1.8; font-size: 1.1rem; }
+        .blog-post-content h2 { color: #f1f5f9; font-size: 1.6rem; margin: 40px 0 16px; }
+        .blog-post-content h3 { color: #e2e8f0; font-size: 1.3rem; margin: 30px 0 12px; }
+        .blog-post-content p { margin-bottom: 20px; }
+        .blog-post-content ul, .blog-post-content ol { margin: 0 0 20px 24px; }
+        .blog-post-content li { margin-bottom: 10px; }
+        .blog-post-content strong { color: #e2e8f0; }
+        .blog-cta-box { background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 12px; padding: 30px; margin: 50px 0; text-align: center; }
+        .blog-cta-box h3 { color: #f1f5f9; margin-bottom: 12px; }
+        .back-to-blog { display: inline-block; margin-bottom: 30px; color: #3b82f6; text-decoration: none; font-weight: 500; }
+        .back-to-blog:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <div class="logo">
+                    <img src="../assets/ac-solutions-logo.png" alt="A.C. SOLUTIONS">
+                    <span>A.C. SOLUTIONS</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../services.html">Services</a></li>
+                    <li><a href="../portfolio.html">Portfolio</a></li>
+                    <li><a href="../pricing.html">Pricing</a></li>
+                    <li><a href="../blog.html" class="active">Blog</a></li>
+                    <li><a href="../careers.html">Careers</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+                <a href="../contact.html" class="btn-quote">Get a Quote</a>
+                <button class="menu-toggle"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="blog-post">
+        <div class="container">
+            <div class="blog-post-header">
+                <a href="../blog.html" class="back-to-blog">← Back to Blog</a>
+                <div class="blog-post-meta">
+                    <span class="category">Web Development</span>
+                    <span>July 27, 2024</span>
+                    <span>10 min read</span>
+                </div>
+                <h1>Performance Optimization: Making Your Website Faster</h1>
+                <p style="color:#94a3b8; font-size:1.15rem;">Practical techniques to improve website performance, load times, and user experience for better SEO rankings.</p>
+            </div>
+
+            <div class="blog-post-content">
+                <p>Website speed is not just a technical detail — it directly affects user experience, conversion rates, and search rankings. Visitors expect pages to load quickly. When they do not, many leave before seeing your content or offers.</p>
+
+                <p>This guide covers practical performance optimization techniques that deliver real improvements without requiring a complete rebuild.</p>
+
+                <h2>Why Speed Matters</h2>
+
+                <ul>
+                    <li><strong>User experience</strong> — Faster sites feel more professional and trustworthy</li>
+                    <li><strong>Conversions</strong> — Even small delays can reduce form submissions and purchases</li>
+                    <li><strong>SEO</strong> — Google uses page experience signals, including Core Web Vitals, as ranking factors</li>
+                    <li><strong>Mobile users</strong> — Many visitors are on mobile networks where every kilobyte counts</li>
+                </ul>
+
+                <h2>Measure Before You Optimize</h2>
+
+                <p>Use tools to understand where time is spent:</p>
+                <ul>
+                    <li>Google PageSpeed Insights</li>
+                    <li>Lighthouse (in Chrome DevTools)</li>
+                    <li>WebPageTest</li>
+                    <li>Chrome User Experience Report data (when available)</li>
+                </ul>
+
+                <p>Focus on metrics that reflect real user experience, especially Largest Contentful Paint (LCP), Interaction to Next Paint (INP), and Cumulative Layout Shift (CLS).</p>
+
+                <h2>1. Optimize Images</h2>
+
+                <p>Images are often the largest assets on a page. Improvements here usually give the biggest wins:</p>
+                <ul>
+                    <li>Compress images without visible quality loss</li>
+                    <li>Use modern formats (WebP or AVIF) with fallbacks</li>
+                    <li>Serve appropriately sized images with <code>srcset</code></li>
+                    <li>Lazy-load images below the fold</li>
+                    <li>Set explicit width and height to reduce layout shift</li>
+                </ul>
+
+                <h2>2. Minimize and Efficiently Load CSS and JavaScript</h2>
+
+                <ul>
+                    <li>Remove unused CSS and JavaScript</li>
+                    <li>Minify production files</li>
+                    <li>Defer non-critical JavaScript</li>
+                    <li>Inline critical CSS for above-the-fold content when helpful</li>
+                    <li>Avoid large third-party scripts that are not essential</li>
+                </ul>
+
+                <h2>3. Improve Server Response Time</h2>
+
+                <ul>
+                    <li>Use quality hosting appropriate for your traffic</li>
+                    <li>Enable caching (page cache, object cache, CDN)</li>
+                    <li>Optimize database queries if you run a dynamic site</li>
+                    <li>Consider a CDN to serve static assets closer to users</li>
+                </ul>
+
+                <h2>4. Use a Content Delivery Network (CDN)</h2>
+
+                <p>A CDN stores copies of your static files in multiple locations worldwide. Visitors download assets from a nearby server, which reduces latency — especially important for audiences spread across regions.</p>
+
+                <h2>5. Reduce Render-Blocking Resources</h2>
+
+                <p>Resources that block the first paint delay what users see. Prioritize critical content, defer secondary scripts, and keep the critical rendering path as short as possible.</p>
+
+                <h2>6. Optimize Fonts</h2>
+
+                <ul>
+                    <li>Limit the number of font families and weights</li>
+                    <li>Use <code>font-display: swap</code> to avoid invisible text</li>
+                    <li>Preload key font files when appropriate</li>
+                    <li>Consider system fonts for maximum speed when brand allows</li>
+                </ul>
+
+                <h2>7. Address Layout Stability (CLS)</h2>
+
+                <p>Unexpected layout shifts frustrate users. Prevent them by:</p>
+                <ul>
+                    <li>Reserving space for images, ads, and embeds</li>
+                    <li>Avoiding inserting content above existing content after load</li>
+                    <li>Using stable font loading strategies</li>
+                </ul>
+
+                <h2>Quick Wins Checklist</h2>
+
+                <ol>
+                    <li>Compress and properly size all images</li>
+                    <li>Enable Gzip or Brotli compression on the server</li>
+                    <li>Turn on browser caching for static assets</li>
+                    <li>Remove unused plugins, scripts, and styles</li>
+                    <li>Test on a real mobile device and a slower network</li>
+                </ol>
+
+                <h2>Performance Is Ongoing</h2>
+
+                <p>Websites change. New features, images, and third-party tools can slowly degrade speed. Build performance checks into your process so improvements stick over time.</p>
+
+                <div class="blog-cta-box">
+                    <h3>Is Your Website Slowing You Down?</h3>
+                    <p>A.C. SOLUTIONS builds fast, modern websites and can audit and improve the performance of your existing site. Let’s talk.</p>
+                    <a href="../contact.html" class="btn btn-primary" style="margin-top:16px;">Request a Performance Review</a>
+                </div>
+
+                <p>A faster website improves how users experience your brand and can support better search visibility and conversions. By measuring carefully and focusing on images, code efficiency, caching, and stability, most sites can achieve meaningful gains without a complete redesign.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="../about.html">About Us</a></li>
+                        <li><a href="../services.html">Services</a></li>
+                        <li><a href="../portfolio.html">Portfolio</a></li>
+                        <li><a href="../careers.html">Careers</a></li>
+                        <li><a href="../blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="../services.html#software-dev">Software Development</a></li>
+                        <li><a href="../services.html#web-dev">Web Development</a></li>
+                        <li><a href="../services.html#mobile-dev">Mobile Apps</a></li>
+                        <li><a href="../services.html#intranet">Intranet Systems</a></li>
+                        <li><a href="../services.html#consulting">IT Consulting</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="tel:+2348105628210">+234 810 562 8210</a></li>
+                        <li><a href="mailto:info@acsolutions.digital">info@acsolutions.digital</a></li>
+                        <li><a href="https://wa.me/2348105628210">WhatsApp Chat</a></li>
+                        <li>Kano State, Nigeria</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-icon">LinkedIn</a>
+                        <a href="#" class="social-icon">Facebook</a>
+                        <a href="#" class="social-icon">Instagram</a>
+                        <a href="#" class="social-icon">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 A.C. SOLUTIONS. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="../privacy-policy.html">Privacy Policy</a>
+                    <a href="../terms-of-service.html">Terms of Service</a>
+                    <a href="../sitemap.html">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
