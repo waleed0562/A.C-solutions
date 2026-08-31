@@ -2,6 +2,44 @@
 // A.C. SOLUTIONS - MAIN JAVASCRIPT
 // ============================================
 
+// Favicons + lighter navbar logo (runs immediately)
+(function initBranding() {
+    var inBlog = window.location.pathname.indexOf('/blog/') !== -1;
+    var base = inBlog ? '../assets/' : 'assets/';
+
+    // Favicon links
+    if (!document.querySelector('link[rel="icon"][sizes="32x32"]')) {
+        var icons = [
+            { rel: 'apple-touch-icon', sizes: '180x180', href: base + 'apple-touch-icon.png' },
+            { rel: 'icon', type: 'image/png', sizes: '32x32', href: base + 'favicon-32x32.png' },
+            { rel: 'icon', type: 'image/png', sizes: '16x16', href: base + 'favicon-16x16.png' },
+            { rel: 'shortcut icon', href: base + 'favicon.ico' },
+            { rel: 'manifest', href: base + 'site.webmanifest' }
+        ];
+        icons.forEach(function (cfg) {
+            var link = document.createElement('link');
+            Object.keys(cfg).forEach(function (k) { link.setAttribute(k, cfg[k]); });
+            document.head.appendChild(link);
+        });
+    }
+
+    // Swap heavy logo for optimized 192x192 icon when present
+    function swapLogos() {
+        document.querySelectorAll('.logo img').forEach(function (img) {
+            var src = img.getAttribute('src') || '';
+            if (src.indexOf('ac-solutions-logo.png') !== -1) {
+                img.setAttribute('src', src.replace('ac-solutions-logo.png', 'android-chrome-192x192.png'));
+            }
+        });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', swapLogos);
+    } else {
+        swapLogos();
+    }
+})();
+
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize all functions
     initMobileMenu();
@@ -152,7 +190,6 @@ function showNotification(message, type = 'info') {
         </div>
     `;
 
-    // Add styles dynamically if not in CSS
     if (!document.querySelector('style[data-notification]')) {
         const style = document.createElement('style');
         style.setAttribute('data-notification', 'true');
@@ -170,42 +207,13 @@ function showNotification(message, type = 'info') {
                 z-index: 1000;
                 animation: slideUp 0.3s ease-out;
             }
-
-            .notification-success {
-                background: linear-gradient(135deg, #10b981, #22D3EE);
-            }
-
-            .notification-error {
-                background: linear-gradient(135deg, #ef4444, #f87171);
-            }
-
-            .notification-content {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                gap: 1rem;
-            }
-
-            .notification-close {
-                background: none;
-                border: none;
-                color: white;
-                font-size: 1.5rem;
-                cursor: pointer;
-                padding: 0;
-                width: 30px;
-                height: 30px;
-            }
-
+            .notification-success { background: linear-gradient(135deg, #10b981, #22D3EE); }
+            .notification-error { background: linear-gradient(135deg, #ef4444, #f87171); }
+            .notification-content { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+            .notification-close { background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; padding: 0; width: 30px; height: 30px; }
             @keyframes slideUp {
-                from {
-                    transform: translateY(100px);
-                    opacity: 0;
-                }
-                to {
-                    transform: translateY(0);
-                    opacity: 1;
-                }
+                from { transform: translateY(100px); opacity: 0; }
+                to { transform: translateY(0); opacity: 1; }
             }
         `;
         document.head.appendChild(style);
@@ -213,12 +221,10 @@ function showNotification(message, type = 'info') {
 
     document.body.appendChild(notification);
 
-    // Close button
     notification.querySelector('.notification-close').addEventListener('click', () => {
         notification.remove();
     });
 
-    // Auto remove after 5 seconds
     setTimeout(() => {
         notification.remove();
     }, 5000);
@@ -241,11 +247,9 @@ function initPortfolioFilters() {
         button.addEventListener('click', function() {
             const filterValue = this.getAttribute('data-filter');
 
-            // Update active button
             filterButtons.forEach(btn => btn.classList.remove('active'));
             this.classList.add('active');
 
-            // Filter cards
             portfolioCards.forEach(card => {
                 const category = card.getAttribute('data-category');
                 if (filterValue === 'all' || category === filterValue) {
@@ -276,11 +280,9 @@ function initBlogFilters() {
         button.addEventListener('click', function() {
             const filterValue = this.getAttribute('data-filter');
 
-            // Update active button
             filterButtons.forEach(btn => btn.classList.remove('active'));
             this.classList.add('active');
 
-            // Filter cards
             blogCards.forEach(card => {
                 const category = card.getAttribute('data-category');
                 if (filterValue === 'all' || category === filterValue) {
@@ -366,7 +368,6 @@ function initCarouselNav() {
 // UTILITY FUNCTIONS
 // ============================================
 
-// Smooth number animation
 function animateNumber(element, target, duration = 2000) {
     const start = 0;
     const increment = target / (duration / 16);
@@ -383,13 +384,11 @@ function animateNumber(element, target, duration = 2000) {
     }, 16);
 }
 
-// Get query parameters
 function getQueryParam(param) {
     const params = new URLSearchParams(window.location.search);
     return params.get(param);
 }
 
-// Set active navigation link
 function setActiveNav() {
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('.nav-links a').forEach(link => {
@@ -402,21 +401,18 @@ function setActiveNav() {
     });
 }
 
-// Initialize navigation on page load
 setActiveNav();
 
 // ============================================
 // LOCAL STORAGE FUNCTIONS
 // ============================================
 
-// Check form submissions
 window.checkFormSubmissions = function() {
     const submissions = JSON.parse(localStorage.getItem('formSubmissions') || '[]');
     console.log('Form Submissions:', submissions);
     return submissions;
 };
 
-// Check newsletter subscribers
 window.checkSubscribers = function() {
     const subscribers = JSON.parse(localStorage.getItem('newsletter') || '[]');
     console.log('Newsletter Subscribers:', subscribers);
@@ -427,7 +423,6 @@ window.checkSubscribers = function() {
 // PERFORMANCE OPTIMIZATION
 // ============================================
 
-// Lazy loading for images
 if ('IntersectionObserver' in window) {
     const imageObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -449,14 +444,10 @@ if ('IntersectionObserver' in window) {
 // ANALYTICS & TRACKING
 // ============================================
 
-// Track page views
 function trackPageView() {
     const pageTitle = document.title;
     const pageURL = window.location.href;
-
     console.log(`Page View: ${pageTitle} - ${pageURL}`);
-
-    // Store in localStorage for analytics
     const analytics = JSON.parse(localStorage.getItem('analytics') || '[]');
     analytics.push({
         page: pageTitle,
@@ -467,21 +458,11 @@ function trackPageView() {
 
 trackPageView();
 
-// Track button clicks
 document.querySelectorAll('.btn').forEach(btn => {
     btn.addEventListener('click', function() {
         console.log('Button clicked:', this.textContent);
     });
 });
-
-// ============================================
-// SERVICE WORKER (Optional)
-// ============================================
-
-if ('serviceWorker' in navigator) {
-    // Service worker registration can be added here
-    // navigator.serviceWorker.register('/sw.js');
-}
 
 // ============================================
 // DEBUG UTILITIES
