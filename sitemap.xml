@@ -37,6 +37,24 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://acsolutions.digital/blog/cross-platform-mobile-development.html</loc>
+        <lastmod>2026-08-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://acsolutions.digital/blog/building-responsive-websites-2024.html</loc>
+        <lastmod>2026-08-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://acsolutions.digital/blog/clean-code-principles.html</loc>
+        <lastmod>2026-08-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
         <loc>https://acsolutions.digital/careers.html</loc>
         <lastmod>2026-08-31</lastmod>
         <changefreq>weekly</changefreq>
