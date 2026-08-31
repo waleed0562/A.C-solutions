@@ -55,6 +55,24 @@
         <priority>0.7</priority>
     </url>
     <url>
+        <loc>https://acsolutions.digital/blog/essential-security-practices.html</loc>
+        <lastmod>2026-08-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://acsolutions.digital/blog/cloud-migration-guide.html</loc>
+        <lastmod>2026-08-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://acsolutions.digital/blog/ai-transforming-business-automation.html</loc>
+        <lastmod>2026-08-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
         <loc>https://acsolutions.digital/careers.html</loc>
         <lastmod>2026-08-31</lastmod>
         <changefreq>weekly</changefreq>
