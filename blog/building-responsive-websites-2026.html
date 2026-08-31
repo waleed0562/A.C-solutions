@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Essential tips and best practices for creating responsive web designs that provide excellent user experience across all devices in 2026 and beyond.">
+    <meta name="keywords" content="responsive web design, mobile-first design, CSS media queries, website performance, web development 2026">
+    <meta property="og:title" content="Building Responsive Websites in 2026 - A.C. SOLUTIONS">
+    <meta property="og:description" content="Essential tips for creating responsive websites that work perfectly on every device">
+    <title>Building Responsive Websites in 2026 - A.C. SOLUTIONS Blog</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/extended.css">
+    <style>
+        .blog-post { padding: 60px 0 80px; }
+        .blog-post-header { max-width: 800px; margin: 0 auto 40px; }
+        .blog-post-meta { display: flex; gap: 20px; margin-bottom: 20px; font-size: 0.95rem; color: #94a3b8; }
+        .blog-post-meta .category { color: #3b82f6; font-weight: 600; }
+        .blog-post-header h1 { font-size: 2.4rem; line-height: 1.3; margin-bottom: 20px; color: #f1f5f9; }
+        .blog-post-content { max-width: 800px; margin: 0 auto; color: #cbd5e1; line-height: 1.8; font-size: 1.1rem; }
+        .blog-post-content h2 { color: #f1f5f9; font-size: 1.6rem; margin: 40px 0 16px; }
+        .blog-post-content h3 { color: #e2e8f0; font-size: 1.3rem; margin: 30px 0 12px; }
+        .blog-post-content p { margin-bottom: 20px; }
+        .blog-post-content ul, .blog-post-content ol { margin: 0 0 20px 24px; }
+        .blog-post-content li { margin-bottom: 10px; }
+        .blog-post-content strong { color: #e2e8f0; }
+        .blog-cta-box { background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 12px; padding: 30px; margin: 50px 0; text-align: center; }
+        .blog-cta-box h3 { color: #f1f5f9; margin-bottom: 12px; }
+        .back-to-blog { display: inline-block; margin-bottom: 30px; color: #3b82f6; text-decoration: none; font-weight: 500; }
+        .back-to-blog:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <div class="logo">
+                    <img src="../assets/ac-solutions-logo.png" alt="A.C. SOLUTIONS">
+                    <span>A.C. SOLUTIONS</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../services.html">Services</a></li>
+                    <li><a href="../portfolio.html">Portfolio</a></li>
+                    <li><a href="../pricing.html">Pricing</a></li>
+                    <li><a href="../blog.html" class="active">Blog</a></li>
+                    <li><a href="../careers.html">Careers</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+                <a href="../contact.html" class="btn-quote">Get a Quote</a>
+                <button class="menu-toggle"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="blog-post">
+        <div class="container">
+            <div class="blog-post-header">
+                <a href="../blog.html" class="back-to-blog">← Back to Blog</a>
+                <div class="blog-post-meta">
+                    <span class="category">Web Development</span>
+                    <span>August 8, 2026</span>
+                    <span>10 min read</span>
+                </div>
+                <h1>Building Responsive Websites in 2026</h1>
+                <p style="color:#94a3b8; font-size:1.15rem;">Essential tips and best practices for creating responsive web designs that provide excellent user experience across all devices.</p>
+            </div>
+
+            <div class="blog-post-content">
+                <p>More people now browse the internet on mobile phones than on desktop computers. In many African markets, mobile traffic often exceeds 70–80% of total website visits. This means a website that only looks good on a large screen is no longer acceptable. Responsive design is the foundation of modern web development.</p>
+
+                <p>In this guide, we share practical advice for building websites that look and work great on phones, tablets, laptops, and large desktop monitors in 2026 and beyond.</p>
+
+                <h2>What Is Responsive Web Design?</h2>
+
+                <p>Responsive web design is an approach that makes a website automatically adjust its layout, images, and content based on the size of the screen. Instead of creating separate websites for mobile and desktop, you create one flexible website that adapts to every device.</p>
+
+                <p>The core techniques include:</p>
+                <ul>
+                    <li>Flexible grid layouts</li>
+                    <li>Flexible images and media</li>
+                    <li>CSS media queries</li>
+                    <li>Mobile-first design strategy</li>
+                </ul>
+
+                <h2>Start with a Mobile-First Approach</h2>
+
+                <p>In 2026, the best practice is still <strong>mobile-first design</strong>. This means you design and build the mobile version of the website first, then progressively enhance it for larger screens.</p>
+
+                <p>Why mobile-first works so well:</p>
+                <ul>
+                    <li>It forces you to focus on the most important content and features.</li>
+                    <li>Mobile users have less patience — a clean, fast experience is critical.</li>
+                    <li>It is easier to scale a simple mobile layout up than to squeeze a complex desktop layout down.</li>
+                    <li>Google uses mobile-first indexing, so the mobile version of your site is what primarily affects rankings.</li>
+                </ul>
+
+                <h2>Key Technical Best Practices</h2>
+
+                <h3>1. Use Modern CSS Layout Tools</h3>
+                <p>CSS Grid and Flexbox are now the standard for building responsive layouts. Avoid old float-based layouts. Combined with relative units (%, rem, em, vw, vh), these tools make fluid designs much easier.</p>
+
+                <h3>2. Write Effective Media Queries</h3>
+                <p>Instead of targeting specific devices, focus on content breakpoints. Common useful breakpoints in 2026 include:</p>
+                <ul>
+                    <li>Small phones: up to 480px</li>
+                    <li>Large phones / small tablets: 481px – 768px</li>
+                    <li>Tablets / small laptops: 769px – 1024px</li>
+                    <li>Desktops: 1025px and above</li>
+                </ul>
+
+                <h3>3. Optimize Images Properly</h3>
+                <p>Images are often the biggest reason websites load slowly on mobile. Best practices include:</p>
+                <ul>
+                    <li>Use modern formats (WebP or AVIF) with JPEG/PNG fallbacks</li>
+                    <li>Serve different image sizes with the <code>srcset</code> attribute</li>
+                    <li>Compress images without visible quality loss</li>
+                    <li>Use lazy loading for images below the fold</li>
+                </ul>
+
+                <h3>4. Make Typography Readable on Every Screen</h3>
+                <p>Use relative units (rem) for font sizes. Ensure line height is comfortable (usually 1.5–1.7). Avoid very small text on mobile and keep paragraph widths readable on large screens (ideally 60–80 characters per line).</p>
+
+                <h3>5. Design Touch-Friendly Interfaces</h3>
+                <p>Buttons and links should be large enough for fingers (minimum 44×44 pixels is a good guideline). Add enough spacing between clickable elements to prevent accidental taps.</p>
+
+                <h2>Performance Matters More Than Ever</h2>
+
+                <p>A responsive website that loads slowly still delivers a poor experience. In 2026, focus on:</p>
+                <ul>
+                    <li>Minimizing JavaScript and CSS</li>
+                    <li>Using efficient fonts (or system fonts when possible)</li>
+                    <li>Implementing critical CSS</li>
+                    <li>Reducing third-party scripts</li>
+                    <li>Testing on real mobile devices and slower network conditions</li>
+                </ul>
+
+                <p>Tools such as Google PageSpeed Insights, Lighthouse, and WebPageTest help you measure and improve performance.</p>
+
+                <h2>Testing Across Devices</h2>
+
+                <p>Never rely only on browser resizing. Always test on real phones and tablets. Check both portrait and landscape orientations. Pay special attention to forms, navigation menus, and any interactive elements.</p>
+
+                <h2>Common Mistakes to Avoid</h2>
+
+                <ul>
+                    <li>Hiding important content on mobile instead of redesigning it</li>
+                    <li>Using fixed widths that break on smaller screens</li>
+                    <li>Ignoring horizontal scrolling issues</li>
+                    <li>Forgetting to test forms and buttons on touch devices</li>
+                    <li>Serving huge unoptimized images to mobile users</li>
+                </ul>
+
+                <h2>Responsive Design and Business Results</h2>
+
+                <p>A well-built responsive website improves user experience, reduces bounce rates, increases conversions, and helps with search engine rankings. For businesses in competitive markets, it is one of the highest-return investments you can make in your digital presence.</p>
+
+                <div class="blog-cta-box">
+                    <h3>Need a Fast, Mobile-Friendly Website?</h3>
+                    <p>At A.C. SOLUTIONS we build modern, responsive websites that look great and perform well on every device. Let’s discuss your project.</p>
+                    <a href="../contact.html" class="btn btn-primary" style="margin-top:16px;">Get a Free Quote</a>
+                </div>
+
+                <p>Responsive design is no longer a “nice to have” feature — it is the standard expectation of every user. By following mobile-first principles, using modern CSS, optimizing performance, and testing thoroughly, you can create websites that deliver excellent experiences across the full range of devices your customers use.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="../about.html">About Us</a></li>
+                        <li><a href="../services.html">Services</a></li>
+                        <li><a href="../portfolio.html">Portfolio</a></li>
+                        <li><a href="../careers.html">Careers</a></li>
+                        <li><a href="../blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="../services.html#software-dev">Software Development</a></li>
+                        <li><a href="../services.html#web-dev">Web Development</a></li>
+                        <li><a href="../services.html#mobile-dev">Mobile Apps</a></li>
+                        <li><a href="../services.html#intranet">Intranet Systems</a></li>
+                        <li><a href="../services.html#consulting">IT Consulting</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="tel:+2348105628210">+234 810 562 8210</a></li>
+                        <li><a href="mailto:info@acsolutions.digital">info@acsolutions.digital</a></li>
+                        <li><a href="https://wa.me/2348105628210">WhatsApp Chat</a></li>
+                        <li>Kano State, Nigeria</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-icon">LinkedIn</a>
+                        <a href="#" class="social-icon">Facebook</a>
+                        <a href="#" class="social-icon">Instagram</a>
+                        <a href="#" class="social-icon">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 A.C. SOLUTIONS. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="../privacy-policy.html">Privacy Policy</a>
+                    <a href="../terms-of-service.html">Terms of Service</a>
+                    <a href="../sitemap.html">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
