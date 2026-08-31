@@ -3,7 +3,7 @@ Allow: /
 Disallow: /admin/
 Disallow: /private/
 
-Sitemap: https://ac-solutions.ng/sitemap.xml
+Sitemap: https://acsolutions.digital/sitemap.xml
 
 # Crawl delay
 Crawl-delay: 1
