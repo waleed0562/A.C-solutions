@@ -1,6 +1,6 @@
 # A.C. SOLUTIONS - Professional Website
 
-A modern, premium website for A.C. SOLUTIONS - a Nigerian technology company providing software development, web design, mobile app development, intranet development, enterprise systems, cloud solutions, IT consulting, and computer technology services.
+A modern, premium website for A.C. SOLUTIONS - a Nigerian technology company providing software development, web design, mobile app development, intranet development, enterprise systems, cloud solutions, IT solutions, and computer technology services.
 
 ## Website Features
 
