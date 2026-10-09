@@ -2,10 +2,18 @@
 // A.C. SOLUTIONS - MAIN JAVASCRIPT
 // ============================================
 
-// Favicons + lighter navbar logo + AdSense meta (runs immediately)
 (function initBranding() {
     var inBlog = window.location.pathname.indexOf('/blog/') !== -1;
     var base = inBlog ? '../assets/' : 'assets/';
+    var cssBase = inBlog ? '../css/' : 'css/';
+
+    if (!document.querySelector('link[data-acs-theme]')) {
+        var theme = document.createElement('link');
+        theme.rel = 'stylesheet';
+        theme.href = cssBase + 'theme.css';
+        theme.setAttribute('data-acs-theme', '1');
+        document.head.appendChild(theme);
+    }
 
     if (!document.querySelector('meta[name="google-adsense-account"]')) {
         var adsense = document.createElement('meta');
@@ -14,7 +22,6 @@
         document.head.appendChild(adsense);
     }
 
-    // Favicon links
     if (!document.querySelector('link[rel="icon"][sizes="32x32"]')) {
         var icons = [
             { rel: 'apple-touch-icon', sizes: '180x180', href: base + 'apple-touch-icon.png' },
@@ -166,12 +173,10 @@ function showNotification(message, type = 'info') {
         const style = document.createElement('style');
         style.setAttribute('data-notification', 'true');
         style.textContent = `
-            .notification { position: fixed; bottom: 20px; right: 20px; max-width: 400px; background: linear-gradient(135deg, #2563EB, #22D3EE); color: white; padding: 1rem; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); z-index: 1000; animation: slideUp 0.3s ease-out; }
-            .notification-success { background: linear-gradient(135deg, #10b981, #22D3EE); }
-            .notification-error { background: linear-gradient(135deg, #ef4444, #f87171); }
+            .notification { position: fixed; bottom: 20px; right: 20px; max-width: 400px; background: #1f4d3a; color: #f7f2ea; padding: 1rem; border-radius: 0; box-shadow: 6px 6px 0 #1a1814; z-index: 1000; }
+            .notification-error { background: #9a4a1c; }
             .notification-content { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
-            .notification-close { background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; padding: 0; width: 30px; height: 30px; }
-            @keyframes slideUp { from { transform: translateY(100px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+            .notification-close { background: none; border: none; color: #f7f2ea; font-size: 1.5rem; cursor: pointer; padding: 0; width: 30px; height: 30px; }
         `;
         document.head.appendChild(style);
     }
@@ -195,7 +200,6 @@ function initPortfolioFilters() {
                 const category = card.getAttribute('data-category');
                 if (filterValue === 'all' || category === filterValue) {
                     card.style.display = 'block';
-                    card.style.animation = 'fadeIn 0.3s ease-in';
                 } else {
                     card.style.display = 'none';
                 }
@@ -219,7 +223,6 @@ function initBlogFilters() {
                 const category = card.getAttribute('data-category');
                 if (filterValue === 'all' || category === filterValue) {
                     card.style.display = 'flex';
-                    card.style.animation = 'fadeIn 0.3s ease-in';
                 } else {
                     card.style.display = 'none';
                 }
