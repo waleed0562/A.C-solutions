@@ -1,0 +1,118 @@
+/* A.C. SOLUTIONS — editorial theme. Overrides the default dark-cyan SaaS look. */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,680&family=Source+Sans+3:wght@400;600;700&display=swap');
+
+:root {
+  --primary-dark: #f4efe6;
+  --secondary-dark: #ebe4d6;
+  --accent-blue: #1f4d3a;
+  --accent-cyan: #9a4a1c;
+  --white: #1a1814;
+  --gray: #4a433a;
+  --dark-gray: #e7dfd0;
+  --light-gray: #1a1814;
+  --shadow: 0 1px 0 rgba(26, 24, 20, 0.08);
+}
+
+body {
+  font-family: 'Source Sans 3', 'Segoe UI', sans-serif;
+  background: #f4efe6;
+  color: #3d372f;
+  background-image: linear-gradient(#efe8dc 1px, transparent 1px);
+  background-size: 100% 32px;
+}
+
+h1, h2, h3, h4, .logo, .hero-title {
+  font-family: Fraunces, Georgia, serif;
+  color: #1a1814;
+  letter-spacing: -0.03em;
+}
+
+.hero-title {
+  background: none !important;
+  -webkit-text-fill-color: #1a1814 !important;
+  color: #1a1814 !important;
+}
+
+a { color: #1f4d3a; }
+a:hover { color: #9a4a1c; }
+
+.navbar {
+  background: #f7f2ea;
+  border-bottom: 2px solid #1a1814;
+  backdrop-filter: none;
+}
+.nav-links a { color: #3d372f; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.78rem; }
+.nav-links a:hover, .nav-links a.active { color: #9a4a1c; }
+.btn-quote, .btn-primary {
+  background: #1f4d3a;
+  color: #f7f2ea;
+  border-radius: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.btn-primary:hover, .btn-quote:hover { background: #9a4a1c; color: #fff; box-shadow: none; transform: none; }
+.btn-secondary { color: #1a1814; border: 1px solid #1a1814; border-radius: 0; background: transparent; }
+.btn-secondary:hover { background: #1a1814; color: #f7f2ea; }
+
+.hero { min-height: auto; padding: 88px 0 64px; }
+.hero-bg, .animated-bg { display: none; }
+.hero-content { text-align: left; max-width: 820px; margin-right: auto; }
+.hero-buttons { justify-content: flex-start; }
+.page-hero {
+  background: #1f4d3a;
+  border-bottom: 6px solid #c4a574;
+  text-align: left;
+}
+.page-hero h1, .page-hero p { color: #f7f2ea; }
+
+.trust-section, .why-choose, .process-section, .technologies, .services-overview {
+  background: transparent;
+  border: 0;
+}
+.trust-card, .service-card, .process-step, .tech-card, .industry-tag, .glass {
+  background: #fffdf8;
+  border: 1px solid #1a1814;
+  border-radius: 0;
+  box-shadow: 6px 6px 0 #1f4d3a;
+  backdrop-filter: none;
+}
+.trust-card:hover, .service-card:hover, .process-step:hover, .tech-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0 #9a4a1c;
+  border-color: #1a1814;
+}
+.service-number, .why-number, .tech-card h4, .service-link { color: #9a4a1c; }
+.step-number { background: #1f4d3a; border-radius: 0; }
+.industry-tag { color: #1f4d3a; background: #fffdf8; }
+.tech-tags span { background: #efe4d2; color: #1f4d3a; border-radius: 0; }
+
+.final-cta {
+  background: #1a1814;
+  border-top: 6px solid #c4a574;
+}
+.final-cta h2, .final-cta p { color: #f7f2ea; }
+.final-cta .btn-primary { background: #c4a574; color: #1a1814; }
+.final-cta .btn-secondary { border-color: #f7f2ea; color: #f7f2ea; }
+
+.footer {
+  background: #1a1814;
+  color: #d8d0c4;
+  border-top: 0;
+}
+.footer-section h4, .footer-section a, .social-icon, .footer-links a, .footer p { color: #d8d0c4; }
+.footer-section a:hover, .social-icon:hover { color: #c4a574; }
+
+.form-group input, .form-group select, .form-group textarea {
+  background: #fffdf8;
+  color: #1a1814;
+  border: 1px solid #1a1814;
+  border-radius: 0;
+}
+.comparison-table { background: #fffdf8; border: 1px solid #1a1814; }
+.comparison-table th, .comparison-table td { color: #1a1814; border-color: #e7dfd0; }
+
+@media (max-width: 768px) {
+  .nav-links { background: #f7f2ea; border-bottom: 2px solid #1a1814; }
+  .menu-toggle span { background: #1a1814; }
+  .hero-content { text-align: left; }
+}
