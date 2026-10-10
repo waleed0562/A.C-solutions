@@ -1,118 +1,122 @@
-/* A.C. SOLUTIONS — editorial theme. Overrides the default dark-cyan SaaS look. */
+/* A.C. SOLUTIONS — dark editorial theme. Distinct from default cyan AI SaaS. */
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,680&family=Source+Sans+3:wght@400;600;700&display=swap');
 
 :root {
-  --primary-dark: #f4efe6;
-  --secondary-dark: #ebe4d6;
-  --accent-blue: #1f4d3a;
-  --accent-cyan: #9a4a1c;
-  --white: #1a1814;
-  --gray: #4a433a;
-  --dark-gray: #e7dfd0;
-  --light-gray: #1a1814;
-  --shadow: 0 1px 0 rgba(26, 24, 20, 0.08);
+  --primary-dark: #12110f;
+  --secondary-dark: #1c1a17;
+  --accent-blue: #2d6a4f;
+  --accent-cyan: #c4a574;
+  --white: #f4efe6;
+  --gray: #c9c2b6;
+  --dark-gray: #2a2723;
+  --light-gray: #f4efe6;
+  --shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
 }
 
 body {
   font-family: 'Source Sans 3', 'Segoe UI', sans-serif;
-  background: #f4efe6;
-  color: #3d372f;
-  background-image: linear-gradient(#efe8dc 1px, transparent 1px);
+  background: #12110f;
+  color: #c9c2b6;
+  background-image: linear-gradient(#1c1a17 1px, transparent 1px);
   background-size: 100% 32px;
 }
 
 h1, h2, h3, h4, .logo, .hero-title {
   font-family: Fraunces, Georgia, serif;
-  color: #1a1814;
+  color: #f4efe6;
   letter-spacing: -0.03em;
 }
 
 .hero-title {
   background: none !important;
-  -webkit-text-fill-color: #1a1814 !important;
-  color: #1a1814 !important;
+  -webkit-text-fill-color: #f4efe6 !important;
+  color: #f4efe6 !important;
 }
 
-a { color: #1f4d3a; }
-a:hover { color: #9a4a1c; }
+a { color: #c4a574; }
+a:hover { color: #2d6a4f; }
 
 .navbar {
-  background: #f7f2ea;
-  border-bottom: 2px solid #1a1814;
+  background: #1c1a17;
+  border-bottom: 2px solid #c4a574;
   backdrop-filter: none;
 }
-.nav-links a { color: #3d372f; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.78rem; }
-.nav-links a:hover, .nav-links a.active { color: #9a4a1c; }
+.nav-links a { color: #c9c2b6; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.78rem; }
+.nav-links a:hover, .nav-links a.active { color: #c4a574; }
 .btn-quote, .btn-primary {
-  background: #1f4d3a;
-  color: #f7f2ea;
+  background: #2d6a4f;
+  color: #f4efe6;
   border-radius: 0;
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
-.btn-primary:hover, .btn-quote:hover { background: #9a4a1c; color: #fff; box-shadow: none; transform: none; }
-.btn-secondary { color: #1a1814; border: 1px solid #1a1814; border-radius: 0; background: transparent; }
-.btn-secondary:hover { background: #1a1814; color: #f7f2ea; }
+.btn-primary:hover, .btn-quote:hover { background: #c4a574; color: #12110f; box-shadow: none; transform: none; }
+.btn-secondary { color: #f4efe6; border: 1px solid #c4a574; border-radius: 0; background: transparent; }
+.btn-secondary:hover { background: #c4a574; color: #12110f; }
 
 .hero { min-height: auto; padding: 88px 0 64px; }
 .hero-bg, .animated-bg { display: none; }
 .hero-content { text-align: left; max-width: 820px; margin-right: auto; }
 .hero-buttons { justify-content: flex-start; }
 .page-hero {
-  background: #1f4d3a;
+  background: #1c1a17;
   border-bottom: 6px solid #c4a574;
   text-align: left;
 }
-.page-hero h1, .page-hero p { color: #f7f2ea; }
+.page-hero h1, .page-hero p { color: #f4efe6; }
 
 .trust-section, .why-choose, .process-section, .technologies, .services-overview {
   background: transparent;
   border: 0;
 }
 .trust-card, .service-card, .process-step, .tech-card, .industry-tag, .glass {
-  background: #fffdf8;
-  border: 1px solid #1a1814;
+  background: #1c1a17;
+  border: 1px solid #3a342c;
   border-radius: 0;
-  box-shadow: 6px 6px 0 #1f4d3a;
+  box-shadow: 6px 6px 0 #2d6a4f;
   backdrop-filter: none;
 }
 .trust-card:hover, .service-card:hover, .process-step:hover, .tech-card:hover {
   transform: translate(-3px, -3px);
-  box-shadow: 9px 9px 0 #9a4a1c;
-  border-color: #1a1814;
+  box-shadow: 9px 9px 0 #c4a574;
+  border-color: #c4a574;
 }
-.service-number, .why-number, .tech-card h4, .service-link { color: #9a4a1c; }
-.step-number { background: #1f4d3a; border-radius: 0; }
-.industry-tag { color: #1f4d3a; background: #fffdf8; }
-.tech-tags span { background: #efe4d2; color: #1f4d3a; border-radius: 0; }
+.service-number, .why-number, .tech-card h4, .service-link { color: #c4a574; }
+.step-number { background: #2d6a4f; border-radius: 0; color: #f4efe6; }
+.industry-tag { color: #c4a574; background: #1c1a17; }
+.tech-tags span { background: #2a2723; color: #c4a574; border-radius: 0; }
 
 .final-cta {
-  background: #1a1814;
+  background: #1c1a17;
   border-top: 6px solid #c4a574;
 }
-.final-cta h2, .final-cta p { color: #f7f2ea; }
-.final-cta .btn-primary { background: #c4a574; color: #1a1814; }
-.final-cta .btn-secondary { border-color: #f7f2ea; color: #f7f2ea; }
+.final-cta h2, .final-cta p { color: #f4efe6; }
+.final-cta .btn-primary { background: #c4a574; color: #12110f; }
+.final-cta .btn-secondary { border-color: #f4efe6; color: #f4efe6; }
 
 .footer {
-  background: #1a1814;
-  color: #d8d0c4;
+  background: #0d0c0a;
+  color: #c9c2b6;
   border-top: 0;
 }
-.footer-section h4, .footer-section a, .social-icon, .footer-links a, .footer p { color: #d8d0c4; }
+.footer-section h4, .footer-section a, .social-icon, .footer-links a, .footer p { color: #c9c2b6; }
 .footer-section a:hover, .social-icon:hover { color: #c4a574; }
 
 .form-group input, .form-group select, .form-group textarea {
-  background: #fffdf8;
-  color: #1a1814;
-  border: 1px solid #1a1814;
+  background: #1c1a17;
+  color: #f4efe6;
+  border: 1px solid #3a342c;
   border-radius: 0;
 }
-.comparison-table { background: #fffdf8; border: 1px solid #1a1814; }
-.comparison-table th, .comparison-table td { color: #1a1814; border-color: #e7dfd0; }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+  border-color: #c4a574;
+}
+.comparison-table { background: #1c1a17; border: 1px solid #3a342c; }
+.comparison-table th, .comparison-table td { color: #f4efe6; border-color: #3a342c; }
+.comparison-table thead { background: #2a2723; }
 
 @media (max-width: 768px) {
-  .nav-links { background: #f7f2ea; border-bottom: 2px solid #1a1814; }
-  .menu-toggle span { background: #1a1814; }
+  .nav-links { background: #1c1a17; border-bottom: 2px solid #c4a574; }
+  .menu-toggle span { background: #f4efe6; }
   .hero-content { text-align: left; }
 }
